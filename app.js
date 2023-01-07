@@ -1,7 +1,8 @@
 const express = require('express');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const cors = require('cors')
+const cors = require('cors');
+const port = process.env.PORT||8080;
 const User = require('./modules/user')
 
 const app=express();
@@ -107,7 +108,7 @@ app.post("/register", (request, response) => {
 connect().then(data=>{
     // we will make a connection to server
 
-    app.listen(8090,function(){
+    app.listen(port,function(){
         console.log("Server Started")
     })
 }).catch(err=>{
